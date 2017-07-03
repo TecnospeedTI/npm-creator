@@ -1,4 +1,7 @@
+var async = require('async')
+var chalk = require('chalk')
 var minimist = require('minimist')
+var Spinner = require('cli-spinner').Spinner
 
 var args = minimist(process.argv.slice(2))
 var lang = require('../lib/get_lang')()
@@ -16,20 +19,26 @@ if (!args._.length) {
   console.log()
   console.log('    -v, --version\t' + lang.VERSION_DESCRIPTION)
   console.log('    -t, --type\t\t' + lang.TYPE_DESCRIPTION)
-  console.log('    -l, --license\t\t' + lang.LICENSE_DESCRIPTION)
+  console.log('    -l, --license\t' + lang.LICENSE_DESCRIPTION)
   process.exit()
 }
 
-var type = args.t || args.type
-
-if (type && ['bin-lib', 'bin', 'lib'].indexOf(type) !== -1) {
-  console.log(lang.INVALID_TYPE)
+function errorExit (message) {
+  console.log(chalk.red(message))
   process.exit(1)
 }
 
-var async = require('async')
-var chalk = require('chalk')
-var Spinner = require('cli-spinner').Spinner
+var type = (args.t || args.type || 'bin-lib').toLowerCase()
+
+if (type && ['bin-lib', 'lib'].indexOf(type) === -1) {
+  errorExit(lang.INVALID_TYPE)
+}
+
+var license = (args.l || args.license || 'mit').toLowerCase()
+
+if (license && ['mit', 'apache', 'gnu'].indexOf(license) === -1) {
+  errorExit(lang.INVALID_LICENSE)
+}
 
 var checkName = require('../lib/check_name')
 var confirmName = require('../lib/confirm_name')
@@ -39,7 +48,8 @@ var createStructure = require('../lib/create_structure')
 var begin
 var options = {
   name: args._[0],
-  type: typeof args.t === 'boolean' ? 'bin-lib' : args.t
+  type: type,
+  license: license
 }
 
 async.series([
@@ -49,12 +59,18 @@ async.series([
     checkName(options, function (err, isNameAvailable) {
       spinner.stop(true)
       if (err) return next(err)
-      if (isNameAvailable) return next()
-      confirmName(next)
+      if (isNameAvailable) {
+        console.log(chalk.green.bold('[ok] ') + lang.CHECKING_AVAILABILITY)
+        return next()
+      }
+      confirmName(function (err) {
+        if (err) return next(err)
+        console.log()
+        next()
+      })
     })
   },
   function (next) {
-    console.log()
     begin = new Date().getTime()
     next()
   },
@@ -81,10 +97,7 @@ async.series([
 ], function (err) {
   if (err && err.message === 'EXIT') process.exit()
   console.log()
-  if (err) {
-    console.log(chalk.red(lang[err.message]))
-    process.exit(1)
-  }
+  if (err) return errorExit(lang[err.message])
   var timeElapsed = (new Date().getTime() - begin) / 1000
   console.log(lang.PROCESS_FINISHED + chalk.gray(' (' + timeElapsed.toFixed(2) + 's)'))
   process.exit()
