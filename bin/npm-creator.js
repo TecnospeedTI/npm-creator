@@ -3,7 +3,7 @@ var minimist = require('minimist')
 var args = minimist(process.argv.slice(2))
 var lang = require('../lib/get_lang')()
 
-if (args.v) {
+if (args.v || args.version) {
   console.log(require('../package.json').version)
   process.exit()
 }
@@ -20,7 +20,9 @@ if (!args._.length) {
   process.exit()
 }
 
-if (args.t && ['bin-lib', 'bin', 'lib'].indexOf(args.t) !== -1) {
+var type = args.t || args.type
+
+if (type && ['bin-lib', 'bin', 'lib'].indexOf(type) !== -1) {
   console.log(lang.INVALID_TYPE)
   process.exit(1)
 }
@@ -59,7 +61,7 @@ async.series([
   function (next) {
     var spinner = new Spinner('%s ' + lang.DOWNLOADING_TEMPLATE)
     spinner.start()
-    downloadTemplate(function (err) {
+    downloadTemplate(options, function (err) {
       spinner.stop(true)
       if (err) return next(err)
       console.log(chalk.green.bold('[ok] ') + lang.DOWNLOADING_TEMPLATE)
