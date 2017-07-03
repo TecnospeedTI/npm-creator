@@ -13,5 +13,7 @@ module.exports = {
   PROCESS_FINISHED: 'Processo finalizado com sucesso',
   ERROR_REQUEST: 'Erro inesperado ao interpretar resposta da API npms.io',
   ERROR_URL_FRIENDLY: 'Nome deve ser URL-friendly',
-  ERROR_CREATING_STRUCTURE: 'Erro inesperado ao criar a estrutura do projeto'
+  ERROR_CREATING_STRUCTURE: 'Erro inesperado ao criar a estrutura do projeto',
+  PATH_EXIST: 'Diretório já existe para este nome de módulo',
+  ERROR_WRITE_FILE: 'Não foi possível descompactar arquivo'
 }
