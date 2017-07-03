@@ -1,9 +1,5 @@
-<p align="right">
-<a href=README-pt.md>Português</a>
-<img src="brazil.png"/>
-</p>
-
-![NPM-creator Logo](logo.jpg)
+<p align="right"><a href=README-pt.md>Português</a><img src="img/brazil.png"/></p>
+![NPM-creator Logo](img/logo.jpg)
  
 NPM Project Generator [node](http://nodejs.org).
 

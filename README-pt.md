@@ -1,8 +1,5 @@
-<p align="right">
-<a href=README.md>English</a>
-<img src="united-kingdom.png"/>
-</p>
-[![NPM-creator Logo](logo.jpg)](https://github.com/TecnospeedTI/npm-creator)
+<p align="right"><a href=README.md>English</a><img src="img/united-kingdom.png"/></p>
+![NPM-creator Logo](img/logo.jpg)
  
 Gerador de projetos NPM [node](http://nodejs.org).
 
