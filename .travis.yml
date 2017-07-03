@@ -1,10 +1,5 @@
 language: node_js
 node_js:
-  - "0.10"
-  - "0.12"
-  - "1.8"
-  - "2.5"
-  - "3.3"
   - "4.8"
   - "5.12"
   - "6.10"
@@ -20,11 +15,4 @@ sudo: false
 cache:
   directories:
     - node_modules
-before_install:
-  # Remove all non-test dependencies
-  - "npm rm --save-dev connect-redis"
-
-  # Update Node.js modules
-  - "test ! -d node_modules || npm prune"
-  - "test ! -d node_modules || npm rebuild"
-script: "npm run lint && set NODE_ENV=test&& jest --coverage"
+script: "npm run lint && set NODE_ENV=test&& jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
