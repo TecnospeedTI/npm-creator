@@ -4,21 +4,31 @@
   "description": "Gerador de projetos para o NPM",
   "main": "./bin",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard --fix",
+    "test": "npm run lint && NODE_ENV=test jest --coverage",
+    "test-windows": "npm run lint && set NODE_ENV=test&& jest --coverage"
+  },
+  "standard": {
+    "globals": [
+      "beforeAll",
+      "afterAll",
+      "beforeEach",
+      "afterEach",
+      "describe",
+      "it",
+      "test",
+      "expect"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TecnospeedTI/npm-creator.git"
   },
-  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/TecnospeedTI/npm-creator/issues"
   },
   "homepage": "https://github.com/TecnospeedTI/npm-creator#readme",
-  "devDependencies": {
-    "standard": "^10.0.2"
-  },
   "dependencies": {
     "async": "^2.5.0",
     "chalk": "^2.0.1",
@@ -26,5 +36,10 @@
     "minimist": "^1.2.0",
     "os-locale": "^2.0.0",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "express": "^4.15.3",
+    "jest": "^20.0.4",
+    "standard": "^10.0.2"
   }
 }

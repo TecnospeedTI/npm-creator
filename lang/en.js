@@ -3,6 +3,7 @@ module.exports = {
   COMMAND_OPTIONS: 'Options',
   VERSION_DESCRIPTION: 'Show current version',
   TYPE_DESCRIPTION: 'Define which template to use (bin-lib, bin, lib). Default: cli-lib',
+  LICENSE_DESCRIPTION: 'Define which license to use (mit, apache, gnu). Default: mit',
   INVALID_TYPE: 'Invalid type. Possibile values: bin-lib, bin, lib',
   NAME_UNAVAILABLE: 'This name is already taken. Do you wish to continue anyway? (y/n)',
   CHECKING_AVAILABILITY: 'Verificando disponibilidade...',
