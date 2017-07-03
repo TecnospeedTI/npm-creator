@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var async = require('async')
 var chalk = require('chalk')
 var minimist = require('minimist')
