@@ -54,6 +54,7 @@ var options = {
 
 async.series([
   function (next) {
+    console.log()
     var spinner = new Spinner('%s ' + lang.CHECKING_AVAILABILITY)
     spinner.start()
     checkName(options, function (err, isNameAvailable) {

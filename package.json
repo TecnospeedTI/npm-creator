@@ -37,6 +37,7 @@
     "mv": "^2.1.1",
     "os-locale": "^2.0.0",
     "request": "^2.81.0",
+    "rmdir": "^1.2.0",
     "unzip": "^0.1.11"
   },
   "devDependencies": {
