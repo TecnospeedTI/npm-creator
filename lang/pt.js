@@ -13,5 +13,5 @@ module.exports = {
   PROCESS_FINISHED: 'Processo finalizado com sucesso',
   ERROR_REQUEST: 'Erro inesperado ao interpretar resposta da API npms.io',
   ERROR_URL_FRIENDLY: 'Nome deve ser URL-friendly',
-  ERROR_CREATING_STRUCTURE: 'Erro inesperado ao criar estrutura'
+  ERROR_CREATING_STRUCTURE: 'Erro inesperado ao criar a estrutura do projeto'
 }

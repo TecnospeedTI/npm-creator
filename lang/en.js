@@ -7,11 +7,11 @@ module.exports = {
   INVALID_TYPE: 'Invalid type. Possible values: bin-lib, lib',
   INVALID_LICENSE: 'Invalid license. Possible values: mit, apache, gnu',
   NAME_UNAVAILABLE: 'This name is already taken. Do you wish to continue anyway? (y/n)',
-  CHECKING_AVAILABILITY: 'Verificando disponibilidade...',
-  DOWNLOADING_TEMPLATE: 'Baixando template...',
-  CREATING_STRUCTURE: 'Criando estrutura...',
-  PROCESS_FINISHED: 'Processo finalizado com sucesso',
-  ERROR_REQUEST: 'ERROR_REQUEST',
-  ERROR_URL_FRIENDLY: 'ERROR_URL_FRIENDLY',
-  ERROR_CREATING_STRUCTURE: 'ERROR_CREATING_STRUCTURE'
+  CHECKING_AVAILABILITY: 'Checking availability...',
+  DOWNLOADING_TEMPLATE: 'Downloading template...',
+  CREATING_STRUCTURE: 'Creating structure...',
+  PROCESS_FINISHED: 'Process finished successfully',
+  ERROR_REQUEST: 'Unexpected error while parsing response from the npms.io API',
+  ERROR_URL_FRIENDLY: 'Name must be URL-friendly',
+  ERROR_CREATING_STRUCTURE: 'Unexpected error while creating the project structure'
 }
