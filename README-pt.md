@@ -1,9 +1,6 @@
-<div style="float: right;">
-	<a href="README-pt.md">Português <img style="height: 30px" src="brazil.ico"></a>
-</div>
 [![NPM-creator Logo](logo.jpg)](https://github.com/TecnospeedTI/npm-creator)
  
-NPM Project Generator [node](http://nodejs.org).
+Gerador de projetos NPM [node](http://nodejs.org).
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
@@ -11,13 +8,13 @@ NPM Project Generator [node](http://nodejs.org).
 [![Windows Build][appveyor-image]][appveyor-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
-## Install
+## Instalação
 
 	```bash
 	$ npm install -g npm-creator
 	```
 
-## License
+## Licença
 
   [MIT](LICENSE)
 
