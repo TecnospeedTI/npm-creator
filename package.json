@@ -2,7 +2,8 @@
   "name": "npm-creator",
   "version": "0.2.2",
   "description": "Gerador de projetos para o NPM",
-  "main": {
+  "main": "./bin",
+  "bin": {
     "npm-creator": "./bin"
   },
   "scripts": {
