@@ -14,6 +14,6 @@ module.exports = {
   ERROR_REQUEST: 'Erro inesperado ao interpretar resposta da API npms.io',
   ERROR_URL_FRIENDLY: 'Nome deve ser URL-friendly',
   ERROR_CREATING_STRUCTURE: 'Erro inesperado ao criar a estrutura do projeto',
-  PATH_EXIST: 'Diretório já existe para este nome de módulo',
-  ERROR_WRITE_FILE: 'Não foi possível descompactar arquivo'
+  PATH_EXIST: 'Já existe um diretório com o nome especificado',
+  ERROR_WRITE_FILE: 'Erro ao descompactar arquivo do template'
 }

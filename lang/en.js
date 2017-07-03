@@ -14,6 +14,6 @@ module.exports = {
   ERROR_REQUEST: 'Unexpected error while parsing response from the npms.io API',
   ERROR_URL_FRIENDLY: 'Name must be URL-friendly',
   ERROR_CREATING_STRUCTURE: 'Unexpected error while creating the project structure',
-  PATH_EXIST: 'Directory local exist for this module',
-  ERROR_WRITE_FILE: 'Unzip file not work'
+  PATH_EXIST: 'There is already a directory with the specified name',
+  ERROR_WRITE_FILE: 'Error while extracting template file'
 }
