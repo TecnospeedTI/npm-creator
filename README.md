@@ -15,9 +15,9 @@ NPM Project Generator [node](http://nodejs.org).
 
 ## Install
 
-	```bash
-	$ npm install -g npm-creator
-	```
+```bash
+$ npm install -g npm-creator
+```
 
 ## License
 

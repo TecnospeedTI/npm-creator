@@ -1,3 +1,7 @@
+<p align="right">
+<a href=README.md>English</a>
+<img src="united-kingdom.png"/>
+</p>
 [![NPM-creator Logo](logo.jpg)](https://github.com/TecnospeedTI/npm-creator)
  
 Gerador de projetos NPM [node](http://nodejs.org).
@@ -10,9 +14,9 @@ Gerador de projetos NPM [node](http://nodejs.org).
 
 ## Instalação
 
-	```bash
-	$ npm install -g npm-creator
-	```
+```bash
+$ npm install -g npm-creator
+```
 
 ## Licença
 
