@@ -1,4 +1,4 @@
-<a align="right" href=README-pt.md>Português</a>
+<p align="right"><a href=README-pt.md>Português</a></p>
 
 ![NPM-creator Logo](img/logo.jpg)
  
