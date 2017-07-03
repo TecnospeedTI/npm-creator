@@ -1,7 +1,9 @@
-<div style="float: right;">
-	<a href="README-pt.md">Português <img style="height: 30px" src="brazil.ico"></a>
-</div>
-[![NPM-creator Logo](logo.jpg)](https://github.com/TecnospeedTI/npm-creator)
+<p align="right">
+<a href=README-pt.md>Português</a>
+<img src="brazil.png"/>
+</p>
+
+![NPM-creator Logo](logo.jpg)
  
 NPM Project Generator [node](http://nodejs.org).
 
