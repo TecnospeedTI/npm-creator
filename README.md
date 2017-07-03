@@ -16,6 +16,14 @@ NPM Project Generator [node](http://nodejs.org).
 $ npm install -g npm-creator
 ```
 
+## Basic usage
+
+```bash
+$ npm-creator my-new-module
+$ cd my-new-module
+$ npm publish
+```
+
 ## License
 
   [MIT](LICENSE)
