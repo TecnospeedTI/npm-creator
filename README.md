@@ -1,4 +1,5 @@
-<p align="right"><a href=README-pt.md>Português</a><img src="img/brazil.png"/></p>
+<a align="right" href=README-pt.md>Português</a>
+
 ![NPM-creator Logo](img/logo.jpg)
  
 NPM Project Generator [node](http://nodejs.org).
