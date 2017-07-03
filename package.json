@@ -1,6 +1,6 @@
 {
   "name": "npm-creator",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Gerador de projetos para o NPM",
   "bin": {
     "npm-creator": "./bin/index.js"
