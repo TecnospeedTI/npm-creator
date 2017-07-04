@@ -22,6 +22,7 @@ if (!args._.length) {
   console.log('    -v, --version\t' + lang.VERSION_DESCRIPTION)
   console.log('    -t, --type\t\t' + lang.TYPE_DESCRIPTION)
   console.log('    -l, --license\t' + lang.LICENSE_DESCRIPTION)
+  console.log()
   process.exit()
 }
 

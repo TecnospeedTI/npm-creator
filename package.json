@@ -1,12 +1,12 @@
 {
   "name": "npm-creator",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Gerador de projetos para o NPM",
   "bin": "./bin/npm-creator",
   "scripts": {
     "lint": "standard --fix",
     "test": "npm run lint && NODE_ENV=test jest --coverage",
-    "test-windows": "npm run lint && set NODE_ENV=test&& jest --coverage"
+    "test-windows": "npm run lint && set NODE_ENV=test && jest --coverage"
   },
   "standard": {
     "globals": [
