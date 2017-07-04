@@ -1,8 +1,8 @@
 {
   "name": "npm-creator",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Gerador de projetos para o NPM",
-  "bin": "./bin/index.js",
+  "bin": "./bin/npm-creator",
   "scripts": {
     "lint": "standard --fix",
     "test": "npm run lint && NODE_ENV=test jest --coverage",
