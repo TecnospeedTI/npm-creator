@@ -99,8 +99,8 @@ async.series([
     })
   }
 ], function (err) {
-  if (err && err.message === 'EXIT') process.exit()
   console.log()
+  if (err && err.message === 'EXIT') process.exit()
   if (err) return errorExit(lang[err.message])
   var timeElapsed = (new Date().getTime() - begin) / 1000
   console.log(lang.PROCESS_FINISHED + chalk.gray(' (' + timeElapsed.toFixed(2) + 's)'))

@@ -1,8 +1,8 @@
 module.exports = {
-  COMMAND_USAGE: 'Usage: npm-creator <nome-do-projeto>',
+  COMMAND_USAGE: 'Usage: npm-creator <project-name>',
   COMMAND_OPTIONS: 'Options',
   VERSION_DESCRIPTION: 'Show current version',
-  TYPE_DESCRIPTION: 'Define which template to use (bin-lib, lib). Default: cli-lib',
+  TYPE_DESCRIPTION: 'Define which template to use (bin-lib, lib). Default: bin-lib',
   LICENSE_DESCRIPTION: 'Define which license to use (mit, apache, gnu). Default: mit',
   INVALID_TYPE: 'Invalid type. Possible values: bin-lib, lib',
   INVALID_LICENSE: 'Invalid license. Possible values: mit, apache, gnu',

@@ -2,7 +2,7 @@ module.exports = {
   COMMAND_USAGE: 'Modo de uso: npm-creator <nome-do-projeto>',
   COMMAND_OPTIONS: 'Opções',
   VERSION_DESCRIPTION: 'Exibe a versão atual',
-  TYPE_DESCRIPTION: 'Define tipo do template a ser utilizado (bin-lib, lib). Padrão: cli-lib',
+  TYPE_DESCRIPTION: 'Define tipo do template a ser utilizado (bin-lib, lib). Padrão: bin-lib',
   LICENSE_DESCRIPTION: 'Define qual licença utilizar (mit, apache, gnu). Padrão: mit',
   INVALID_TYPE: 'Tipo de template inválido. Valores possíveis: bin-lib, lib',
   INVALID_LICENSE: 'Tipo de licença inválido. Valores possíveis: mit, apache, gnu',
