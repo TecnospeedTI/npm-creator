@@ -6,8 +6,6 @@
 [![Windows Build][appveyor-image]][appveyor-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
-[NPM](npmjs.com) project generator
-
 ## Install
 
 ```bash
@@ -20,6 +18,21 @@ $ npm install -g npm-creator
 $ npm-creator my-new-module
 $ cd my-new-module
 $ npm publish
+```
+
+## Options
+
+```bash
+$ npm-creator -h
+
+  Usage: npm-creator <project-name>
+
+  Options:
+
+    -v, --version       Show current version
+    -t, --type          Define which template to use (bin-lib, lib). Default: bin-lib
+    -l, --license       Define which license to use (mit, apache, gnu). Default: mit
+
 ```
 
 ## License
