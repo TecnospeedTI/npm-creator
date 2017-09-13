@@ -22,13 +22,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TecnospeedTI/npm-creator.git"
+    "url": "git+https://github.com/tecnospeed/npm-creator.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TecnospeedTI/npm-creator/issues"
+    "url": "https://github.com/tecnospeed/npm-creator/issues"
   },
-  "homepage": "https://github.com/TecnospeedTI/npm-creator#readme",
+  "homepage": "https://github.com/tecnospeed/npm-creator#readme",
   "dependencies": {
     "async": "^2.5.0",
     "chalk": "^2.0.1",

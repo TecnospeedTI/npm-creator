@@ -32,7 +32,7 @@ $ npm publish
 [downloads-url]: https://npmjs.org/package/npm-creator
 [travis-image]: https://img.shields.io/travis/tecnospeed/npm-creator/master.svg?label=linux
 [travis-url]: https://travis-ci.org/tecnospeed/npm-creator
-[appveyor-image]: https://img.shields.io/appveyor/ci/fabiorogeriosj/npm-creator/master.svg?label=windows
-[appveyor-url]: https://ci.appveyor.com/project/fabiorogeriosj/npm-creator
+[appveyor-image]: https://img.shields.io/appveyor/ci/zonetti/npm-creator/master.svg?label=windows
+[appveyor-url]: https://ci.appveyor.com/project/zonetti/npm-creator
 [coveralls-image]: https://img.shields.io/coveralls/tecnospeed/npm-creator/master.svg
 [coveralls-url]: https://coveralls.io/r/tecnospeed/npm-creator?branch=master
