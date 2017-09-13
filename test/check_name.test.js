@@ -13,7 +13,7 @@ afterAll(function (done) {
 it('should fail the request', function (done) {
   httpMock.queueResponse(500, false, '{"invalid_json')
   checkName({name: 'npm-creator'}, function (err) {
-    expect(err.message).toBe('ERROR_REQUEST')
+    expect(err.message).toBe('REQUEST')
     done()
   })
 })
@@ -24,7 +24,7 @@ it('should return that "name" is not URL-friendly', function (done) {
     message: 'name can only contain URL-friendly characters'
   })
   checkName({name: 'npm-creator'}, function (err) {
-    expect(err.message).toBe('ERROR_URL_FRIENDLY')
+    expect(err.message).toBe('URL_FRIENDLY')
     done()
   })
 })

@@ -6,7 +6,6 @@ var minimist = require('minimist')
 var Spinner = require('cli-spinner').Spinner
 
 var args = minimist(process.argv.slice(2))
-var lang = require('../lib/get_lang')()
 
 if (args.v || args.version) {
   console.log(require('../package.json').version)
@@ -15,13 +14,13 @@ if (args.v || args.version) {
 
 if (!args._.length) {
   console.log()
-  console.log('  ' + lang.COMMAND_USAGE)
+  console.log('  Usage: npm-creator <project-name>')
   console.log()
-  console.log('  ' + lang.COMMAND_OPTIONS + ':')
+  console.log('  Options:')
   console.log()
-  console.log('    -v, --version\t' + lang.VERSION_DESCRIPTION)
-  console.log('    -t, --type\t\t' + lang.TYPE_DESCRIPTION)
-  console.log('    -l, --license\t' + lang.LICENSE_DESCRIPTION)
+  console.log('    -v, --version\tShow current version')
+  console.log('    -t, --type\t\tDefine which template to use (bin-lib, lib). Default: bin-lib')
+  console.log('    -l, --license\tDefine which license to use (mit, apache, gnu). Default: mit')
   console.log()
   process.exit()
 }
@@ -34,13 +33,13 @@ function errorExit (message) {
 var type = (args.t || args.type || 'bin-lib').toLowerCase()
 
 if (type && ['bin-lib', 'lib'].indexOf(type) === -1) {
-  errorExit(lang.INVALID_TYPE)
+  errorExit('Invalid type. Possible values: bin-lib, lib')
 }
 
 var license = (args.l || args.license || 'mit').toLowerCase()
 
 if (license && ['mit', 'apache', 'gnu'].indexOf(license) === -1) {
-  errorExit(lang.INVALID_LICENSE)
+  errorExit('Invalid license. Possible values: mit, apache, gnu')
 }
 
 var checkName = require('../lib/check_name')
@@ -54,17 +53,24 @@ var options = {
   type: type,
   license: license
 }
+var errors = {
+  REQUEST: 'Unexpected error while parsing response from the npms.io API',
+  URL_FRIENDLY: 'Name must be URL-friendly',
+  CREATING_STRUCTURE: 'Unexpected error while creating the project structure',
+  PATH_EXIST: 'There is already a directory with the specified name',
+  WRITE_FILE: 'Error while extracting template file'
+}
 
 async.series([
   function (next) {
     console.log()
-    var spinner = new Spinner('%s ' + lang.CHECKING_AVAILABILITY)
+    var spinner = new Spinner('%s Checking availability...')
     spinner.start()
     checkName(options, function (err, isNameAvailable) {
       spinner.stop(true)
       if (err) return next(err)
       if (isNameAvailable) {
-        console.log(chalk.green.bold('[ok] ') + lang.CHECKING_AVAILABILITY)
+        console.log(chalk.green.bold('[ok] ') + 'Checking availability...')
         return next()
       }
       confirmName(function (err) {
@@ -79,31 +85,31 @@ async.series([
     next()
   },
   function (next) {
-    var spinner = new Spinner('%s ' + lang.DOWNLOADING_TEMPLATE)
+    var spinner = new Spinner('%s Downloading template...')
     spinner.start()
     downloadTemplate(options, function (err) {
       spinner.stop(true)
       if (err) return next(err)
-      console.log(chalk.green.bold('[ok] ') + lang.DOWNLOADING_TEMPLATE)
+      console.log(chalk.green.bold('[ok] ') + 'Downloading template...')
       next()
     })
   },
   function (next) {
-    var spinner = new Spinner('%s ' + lang.CREATING_STRUCTURE)
+    var spinner = new Spinner('%s Creating structure...')
     spinner.start()
     createStructure(options, function (err) {
       spinner.stop(true)
       if (err) return next(err)
-      console.log(chalk.green.bold('[ok] ') + lang.CREATING_STRUCTURE)
+      console.log(chalk.green.bold('[ok] ') + 'Creating structure...')
       next()
     })
   }
 ], function (err) {
   console.log()
   if (err && err.message === 'EXIT') process.exit()
-  if (err) return errorExit(lang[err.message])
+  if (err) return errorExit(errors[err.message])
   var timeElapsed = (new Date().getTime() - begin) / 1000
-  console.log(lang.PROCESS_FINISHED + chalk.gray(' (' + timeElapsed.toFixed(2) + 's)'))
+  console.log('Process finished successfully' + chalk.gray(' (' + timeElapsed.toFixed(2) + 's)'))
   console.log()
   process.exit()
 })
